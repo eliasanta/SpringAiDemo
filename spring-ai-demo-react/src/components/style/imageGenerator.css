@@ -1,0 +1,35 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+/* Immagine generata */
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Slot vuoto */
+.empty-image-slot {
+  width: 100%;
+  padding-top: 100%; /* 1:1 ratio */
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #fafafa;
+  position: relative;
+}
+
+/* Icona o testo al centro del segnaposto (opzionale) */
+.empty-image-slot::before {
+  font-size: 2rem;
+  color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

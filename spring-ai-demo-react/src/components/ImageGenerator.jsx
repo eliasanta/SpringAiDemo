@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './style/imageGenerator.css';
 
 
 export default function ImageGenerator() {
