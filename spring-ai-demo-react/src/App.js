@@ -30,7 +30,7 @@ function AppContent() {
         </>
       ) : (
         <Link to="/">
-          <button>← Back to Home</button>
+          <button>Home</button>
         </Link>
       )}
 

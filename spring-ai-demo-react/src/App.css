@@ -51,7 +51,7 @@ div > h2 {
 /* Input + bottone */
 input[type="text"] {
   padding: 0.5rem;
-  width: 60%;
+  width: 70%;
   max-width: 400px;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -111,20 +111,32 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
-.spinner {
-  margin: 20px auto;
-  width: 40px;
-  height: 40px;
-  border: 4px solid #ccc;
-  border-top: 4px solid #4b9cdb;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.send-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* Animazione di rotazione */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #4b9cdb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
+.chat-entry {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
