@@ -1,38 +1,130 @@
+/* Stile generale */
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 2rem;
+  background-color: #f5f5f5;
   min-height: 100vh;
+}
+
+/* Navigazione */
+nav {
+  margin-bottom: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+}
+
+/* Pulsanti di navigazione */
+nav button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #0077cc;
   color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+nav button:hover {
+  background-color: #005fa3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Contenuto */
+div > h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
   }
+
+  nav button {
+    width: 80%;
+  }
+}
+/* Input + bottone */
+input[type="text"] {
+  padding: 0.5rem;
+  width: 60%;
+  max-width: 400px;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+/* Immagine generata */
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Slot vuoto */
+.empty-image-slot {
+  width: 100%;
+  padding-top: 100%; /* 1:1 ratio */
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #fafafa;
+  position: relative;
+}
+
+/* Icona o testo al centro del segnaposto (opzionale) */
+.empty-image-slot::before {
+  font-size: 2rem;
+  color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #4b9cdb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animazione di rotazione */
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
