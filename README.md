@@ -1,2 +1,2 @@
 # SpringAiDemo
-studio springAI
+prove utilizzo libreria spring AI. 
