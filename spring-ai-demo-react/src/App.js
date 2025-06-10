@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import ImageGenerator from './components/ImageGenerator';
 import Chat from './components/Chat';
 import RecipeGenerator from './components/RecipeGenerator';
+import ChainWorkflow from './components/ChainWorkflow';
 
 import './App.css';
 
@@ -26,6 +27,9 @@ function AppContent() {
             <Link to="/recipe-generator">
               <button>Recipe Generator</button>
             </Link>
+            <Link to="/chain-workflow">
+              <button>Demo Chain Workflow</button>
+            </Link>
           </nav>
         </>
       ) : (
@@ -39,6 +43,8 @@ function AppContent() {
         <Route path="/image-generator" element={<ImageGenerator />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/recipe-generator" element={<RecipeGenerator />} />
+        <Route path="/chain-workflow" element={<ChainWorkflow />} />
+        <Route path="*" element={<h2>Page not found</h2>} />
       </Routes>
     </div>
   );

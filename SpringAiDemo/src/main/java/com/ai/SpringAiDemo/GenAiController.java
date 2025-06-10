@@ -3,9 +3,7 @@ package com.ai.SpringAiDemo;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.ai.image.ImageResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,12 +13,15 @@ public class GenAiController {
     private final ChatService chatService;
     private final ImageService imageService;
     private final RecipeService recipeService;
+    private final ChainWorkflow chainWorkflow;
 
 
-    public GenAiController(ChatService chatService, ImageService imageService, RecipeService recipeService) {
+    public GenAiController(ChatService chatService, ImageService imageService, RecipeService recipeService,
+                           ChainWorkflow chainWorkflow) {
         this.chatService = chatService;
         this.imageService =imageService;
         this.recipeService = recipeService;
+        this.chainWorkflow=chainWorkflow;
     }
 
     @GetMapping("/ask-ai")
@@ -47,6 +48,8 @@ public class GenAiController {
                                 @RequestParam(defaultValue = "nessuna") String dietaryRestrictions) {
         return recipeService.createRecipe(ingredients, cuisine, dietaryRestrictions);
     }
-
-
+    @PostMapping("/chain-workflow")
+    public String analyzeText(@RequestBody String text) {
+        return chainWorkflow.chain(text);
+    }
 }
